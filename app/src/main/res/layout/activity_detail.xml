@@ -187,7 +187,7 @@
                         android:id="@+id/textView9"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp_16"
+                        android:layout_marginTop="@dimen/dp_0"
                         android:text="@string/detail_description_label"
                         android:textStyle="bold"
                         app:layout_constraintStart_toStartOf="parent"
