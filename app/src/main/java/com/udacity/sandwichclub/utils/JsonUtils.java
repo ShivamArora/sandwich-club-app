@@ -18,6 +18,7 @@ public class JsonUtils {
     private static final String KEY_DESCRIPTION = "description";
     private static final String KEY_IMAGE = "image";
     private static final String KEY_INGREDIENTS = "ingredients";
+
     public static Sandwich parseSandwichJson(String json) {
         Sandwich sandwich = null;
         try {
@@ -27,7 +28,7 @@ public class JsonUtils {
 
             JSONArray akaArray = sandwichNames.getJSONArray(KEY_ALSO_KNOWN_AS);
             List<String> alsoKnownAs = new ArrayList<>();
-            for(int i=0;i<akaArray.length();i++){
+            for (int i = 0; i < akaArray.length(); i++) {
                 alsoKnownAs.add(akaArray.getString(i));
             }
 
@@ -37,11 +38,11 @@ public class JsonUtils {
 
             JSONArray ingredientsArray = jsonObject.getJSONArray(KEY_INGREDIENTS);
             List<String> ingredients = new ArrayList<>();
-            for (int i=0;i<ingredientsArray.length();i++){
+            for (int i = 0; i < ingredientsArray.length(); i++) {
                 ingredients.add(ingredientsArray.getString(i));
             }
 
-            sandwich = new Sandwich(mainName,alsoKnownAs,placeOfOrigin,description,imageUrl,ingredients);
+            sandwich = new Sandwich(mainName, alsoKnownAs, placeOfOrigin, description, imageUrl, ingredients);
 
 
         } catch (JSONException e) {
