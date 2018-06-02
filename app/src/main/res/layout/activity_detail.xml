@@ -1,214 +1,208 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
+    android:layout_height="wrap_content"
     tools:context="com.udacity.sandwichclub.DetailActivity">
 
-    <ScrollView
+    <android.support.constraint.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
-        <android.support.constraint.ConstraintLayout
+
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view1"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            android:padding="@dimen/dp_8"
+            app:contentPadding="@dimen/dp_8"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_view1"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/dp_8"
-                android:layout_marginLeft="@dimen/dp_8"
-                android:layout_marginRight="@dimen/dp_8"
-                android:layout_marginStart="@dimen/dp_8"
-                android:layout_marginTop="@dimen/dp_8"
-                android:padding="@dimen/dp_8"
-                app:contentPadding="@dimen/dp_8"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toTopOf="parent">
+                android:layout_height="wrap_content">
 
-                <android.support.constraint.ConstraintLayout
+                <ImageView
+                    android:id="@+id/image_iv"
                     android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                    android:layout_height="@dimen/dp_200"
+                    android:layout_marginEnd="@dimen/dp_8"
+                    android:layout_marginLeft="@dimen/dp_8"
+                    android:layout_marginRight="@dimen/dp_8"
+                    android:layout_marginStart="@dimen/dp_8"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:adjustViewBounds="true"
+                    android:contentDescription="@string/sandwich_picture_content_description"
+                    android:scaleType="centerCrop"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <ImageView
-                        android:id="@+id/image_iv"
-                        android:layout_width="match_parent"
-                        android:layout_height="@dimen/dp_200"
-                        android:layout_marginEnd="@dimen/dp_8"
-                        android:layout_marginLeft="@dimen/dp_8"
-                        android:layout_marginRight="@dimen/dp_8"
-                        android:layout_marginStart="@dimen/dp_8"
-                        android:layout_marginTop="@dimen/dp_8"
-                        android:adjustViewBounds="true"
-                        android:contentDescription="@string/sandwich_picture_content_description"
-                        android:scaleType="centerCrop"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/origin_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-                    <TextView
-                        android:id="@+id/origin_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/tv_also_known_as_label"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_8"
+                    android:text="@string/detail_also_known_as_label"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/image_iv"
+                    app:layout_constraintTop_toBottomOf="@+id/image_iv" />
 
-                    <TextView
-                        android:id="@+id/tv_also_known_as_label"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp_8"
-                        android:text="@string/detail_also_known_as_label"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/image_iv"
-                        app:layout_constraintTop_toBottomOf="@+id/image_iv" />
+                <TextView
+                    android:id="@+id/textView3"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_16"
+                    android:text="@string/detail_place_of_origin_label"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="@+id/tv_also_known_as_label"
+                    app:layout_constraintTop_toBottomOf="@+id/tv_also_known_as" />
 
-                    <TextView
-                        android:id="@+id/textView3"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp_16"
-                        android:text="@string/detail_place_of_origin_label"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="@+id/tv_also_known_as_label"
-                        app:layout_constraintTop_toBottomOf="@+id/tv_also_known_as" />
+                <TextView
+                    android:id="@+id/description_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-                    <TextView
-                        android:id="@+id/description_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/ingredients_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
-                    <TextView
-                        android:id="@+id/ingredients_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
-
-                    <TextView
-                        android:id="@+id/also_known_tv"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content" />
+                <TextView
+                    android:id="@+id/also_known_tv"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content" />
 
 
-                    <TextView
-                        android:id="@+id/tv_also_known_as"
-                        android:layout_width="@dimen/dp_0"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/dp_16"
-                        android:layout_marginLeft="@dimen/dp_16"
-                        android:layout_marginRight="@dimen/dp_16"
-                        android:layout_marginStart="@dimen/dp_16"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/tv_also_known_as_label"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/tv_also_known_as_label"
-                        tools:text="name1, name 2" />
+                <TextView
+                    android:id="@+id/tv_also_known_as"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/tv_also_known_as_label"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/tv_also_known_as_label"
+                    tools:text="name1, name 2" />
 
-                    <TextView
-                        android:id="@+id/tv_place_of_origin"
-                        android:layout_width="@dimen/dp_0"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/dp_16"
-                        android:layout_marginLeft="@dimen/dp_16"
-                        android:layout_marginRight="@dimen/dp_16"
-                        android:layout_marginStart="@dimen/dp_16"
-                        app:layout_constraintBaseline_toBaselineOf="@+id/textView3"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toEndOf="@+id/textView3"
-                        tools:text="India" />
-
-
+                <TextView
+                    android:id="@+id/tv_place_of_origin"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginLeft="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:layout_marginStart="@dimen/dp_16"
+                    app:layout_constraintBaseline_toBaselineOf="@+id/textView3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textView3"
+                    tools:text="India" />
 
 
-                </android.support.constraint.ConstraintLayout>
-            </android.support.v7.widget.CardView>
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_view3"
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            app:contentPadding="@dimen/dp_16"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_view1">
+
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginEnd="@dimen/dp_8"
-                android:layout_marginLeft="@dimen/dp_8"
-                android:layout_marginRight="@dimen/dp_8"
-                android:layout_marginStart="@dimen/dp_8"
-                android:layout_marginTop="@dimen/dp_8"
-                app:contentPadding="@dimen/dp_16"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_view1">
+                android:layout_height="wrap_content">
 
-                <android.support.constraint.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textView4"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/detail_ingredients_label"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/textView4"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:text="@string/detail_ingredients_label"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/tv_ingredients"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView4"
+                    app:layout_constraintTop_toBottomOf="@+id/textView4"
+                    tools:text="ING1, ING2" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
 
-                    <TextView
-                        android:id="@+id/tv_ingredients"
-                        android:layout_width="@dimen/dp_0"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/dp_16"
-                        android:layout_marginRight="@dimen/dp_16"
-                        android:layout_marginTop="@dimen/dp_8"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/textView4"
-                        app:layout_constraintTop_toBottomOf="@+id/textView4"
-                        tools:text="ING1, ING2" />
-                </android.support.constraint.ConstraintLayout>
-            </android.support.v7.widget.CardView>
+        <android.support.v7.widget.CardView
+            android:id="@+id/card_view2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginBottom="@dimen/dp_16"
+            android:layout_marginEnd="@dimen/dp_8"
+            android:layout_marginLeft="@dimen/dp_8"
+            android:layout_marginRight="@dimen/dp_8"
+            android:layout_marginStart="@dimen/dp_8"
+            android:layout_marginTop="@dimen/dp_8"
+            app:contentPadding="@dimen/dp_16"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/card_view3">
 
-            <android.support.v7.widget.CardView
-                android:id="@+id/card_view2"
+            <android.support.constraint.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_marginBottom="@dimen/dp_16"
-                android:layout_marginEnd="@dimen/dp_8"
-                android:layout_marginLeft="@dimen/dp_8"
-                android:layout_marginRight="@dimen/dp_8"
-                android:layout_marginStart="@dimen/dp_8"
-                android:layout_marginTop="@dimen/dp_8"
-                app:contentPadding="@dimen/dp_16"
-                app:layout_constraintBottom_toBottomOf="parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintHorizontal_bias="0.0"
-                app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/card_view3">
+                android:layout_height="wrap_content">
 
-                <android.support.constraint.ConstraintLayout
-                    android:layout_width="match_parent"
-                    android:layout_height="wrap_content">
+                <TextView
+                    android:id="@+id/textView9"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/dp_0"
+                    android:text="@string/detail_description_label"
+                    android:textStyle="bold"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
 
-                    <TextView
-                        android:id="@+id/textView9"
-                        android:layout_width="wrap_content"
-                        android:layout_height="wrap_content"
-                        android:layout_marginTop="@dimen/dp_0"
-                        android:text="@string/detail_description_label"
-                        android:textStyle="bold"
-                        app:layout_constraintStart_toStartOf="parent"
-                        app:layout_constraintTop_toTopOf="parent" />
+                <TextView
+                    android:id="@+id/tv_description"
+                    android:layout_width="@dimen/dp_0"
+                    android:layout_height="wrap_content"
+                    android:layout_marginEnd="@dimen/dp_16"
+                    android:layout_marginRight="@dimen/dp_16"
+                    android:layout_marginTop="@dimen/dp_8"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="@+id/textView9"
+                    app:layout_constraintTop_toBottomOf="@+id/textView9"
+                    tools:text="Description of the sandwich" />
 
-                    <TextView
-                        android:id="@+id/tv_description"
-                        android:layout_width="@dimen/dp_0"
-                        android:layout_height="wrap_content"
-                        android:layout_marginEnd="@dimen/dp_16"
-                        android:layout_marginRight="@dimen/dp_16"
-                        android:layout_marginTop="@dimen/dp_8"
-                        app:layout_constraintEnd_toEndOf="parent"
-                        app:layout_constraintStart_toStartOf="@+id/textView9"
-                        app:layout_constraintTop_toBottomOf="@+id/textView9"
-                        tools:text="Description of the sandwich" />
+            </android.support.constraint.ConstraintLayout>
+        </android.support.v7.widget.CardView>
+    </android.support.constraint.ConstraintLayout>
 
-                </android.support.constraint.ConstraintLayout>
-            </android.support.v7.widget.CardView>
-        </android.support.constraint.ConstraintLayout>
-
-    </ScrollView>
-
-</FrameLayout>
+</ScrollView>
